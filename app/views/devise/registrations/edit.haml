@@ -1,0 +1,52 @@
+%section.section#edit-registration
+  .container
+    .content
+      %h1.title
+        Edit #{resource_name.to_s.humanize}
+
+      .columns
+        .column.is-5
+          = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+            = render "devise/shared/error_messages", resource: resource
+
+            .field
+              = f.label :email, class: 'label'
+              .control
+                = f.email_field :email, autofocus: true, autocomplete: "email", class: 'input'
+              - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+                %p.help
+                  Currently waiting confirmation for: #{resource.unconfirmed_email}
+
+            .field
+              = f.label :password, class: 'label'
+              .control
+                = f.password_field :password, autocomplete: "new-password", class: 'input'
+              %p.help
+                (leave blank if you don't want to change it)
+                - if @minimum_password_length
+                  %br/
+                  = @minimum_password_length
+                  characters minimum
+
+            .field
+              = f.label :password_confirmation, class: 'label'
+              .control
+                = f.password_field :password_confirmation, autocomplete: "new-password", class: 'input'
+
+            .field
+              = f.label :current_password, class: 'label'
+              .control
+                = f.password_field :current_password, autocomplete: "current-password", class: 'input'
+              %p.help (we need your current password to confirm your changes)
+
+            .buttons
+              = f.submit "Update", class: 'button is-primary'
+
+          %hr/
+
+          %h3 Cancel my account
+          %p
+            Unhappy?
+            = button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: 'button is-danger'
+
+          = link_to "Back", :back
