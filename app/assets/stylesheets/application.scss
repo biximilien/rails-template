@@ -1,5 +1,14 @@
+//  Bulma
 @import "bulma/bulma";
+
+// Font Awesome
 @import "@fortawesome/fontawesome-free/scss/fontawesome";
 @import "@fortawesome/fontawesome-free/scss/brands";
 @import "@fortawesome/fontawesome-free/scss/regular";
 @import "@fortawesome/fontawesome-free/scss/solid";
+
+// Devise
+@import "sessions";
+
+// Pages
+@import "pages/home";
