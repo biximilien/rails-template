@@ -66,4 +66,4 @@ gem 'cancancan'
 gem 'foreman'
 
 # HAML
-gem 'haml'
+gem 'haml-rails', '~> 2.0'
