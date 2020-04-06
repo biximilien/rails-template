@@ -23,7 +23,7 @@ rails_command "db:create"
 rails_command "db:migrate"
 
 # Add root route
-root to: 'pages#home'
+route "root to: 'pages#home'"
 
 git :init
 git add: '.'
