@@ -1,18 +1,33 @@
 
 # Authentication
-gem 'devise'
+if yes?('Install `devise` ?')
 
-# Install devise
-generate 'devise:install'
+  # Add devise to Gemfile
+  gem 'devise'
 
-# Setup action mailer default url options (needed by Devise)
-environment 'config.action_mailer.default_url_options = { host: "localhost", port: 5000 }', env: 'development'
+  # Run Devise generators
+  generate 'devise:install'
 
-# Setup User
-generate 'devise User'
+  # Get the `User` model name
+  model_name = ask('What is the user model? [User]')
+  model_name = 'User' if model_name.blank?
+
+  # Setup action mailer default url options (needed by Devise)
+  environment 'config.action_mailer.default_url_options = { host: "localhost", port: 5000 }', env: 'development'
+
+  # Run Devise User generators
+  generate 'devise', model_name
+end
 
 # Authorization
-gem 'cancancan'
+if yes?('Install `cancancan` ?')
+
+  # Add cancancan to Gemfile
+  gem 'cancancan'
+
+  # Run Cancan generators
+  generate 'cancan:ability'
+end
 
 # Foreman
 gem 'foreman'
@@ -21,7 +36,9 @@ gem 'foreman'
 gem 'haml'
 
 # RSpec
-gem 'rspec-rails', '~> 4.0.0'
+gem_group :development, :test do
+  gem 'rspec-rails', '~> 4.0.0'
+end
 
 # bulma CSS framework
 run "yarn add bulma"
