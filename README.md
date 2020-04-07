@@ -5,8 +5,8 @@ pre-installed. This is great to save time on new projects by installing
 everything automagically.
 
 Inspired by and loosely based on Matt Brictson's amazing Ruby on Rails
-application template [mattbrictson/rails-template][orig-rails-template]. Have
-a look at it!
+application template [mattbrictson/rails-template](https://github.com/mattbrictson/rails-template).
+Have a look at it!
 
 ## How to use
 
@@ -30,16 +30,9 @@ to source my template.
 
 ## What it includes?
 
-* [Devise][devise-repo]
-* [Foreman][foreman-repo]
+* [Devise](https://github.com/heartcombo/devise)
+* [Foreman](https://github.com/ddollar/foreman)
 * RSpec
-* [HAML][haml-site]
-* [Bulma][bulma-site]
-* [FontAwesome][fontawesome-site]
-
-[fontawesome-site][https://fontawesome.com/]
-[bulma-site][https://bulma.io/]
-[haml-site][http://haml.info/]
-[devise-repo][https://github.com/heartcombo/devise]
-[foreman-repo][https://github.com/ddollar/foreman]
-[orig-rails-template][https://github.com/mattbrictson/rails-template]
+* [HAML](http://haml.info/)
+* [Bulma](https://bulma.io/)
+* [FontAwesome](https://fontawesome.com/)
