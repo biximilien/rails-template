@@ -15,6 +15,10 @@
 
       .navbar-end
         - if user_signed_in?
+          = link_to edit_user_registration_path, class: 'navbar-item' do
+            %i.fas.fa-user
+            &nbsp;
+            My Account
           = link_to destroy_user_session_path, method: :delete, class: 'navbar-item' do
             %i.fas.fa-sign-out-alt
             &nbsp;
